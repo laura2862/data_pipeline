@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "name":"Run current module",
+            "type": "debugpy",
+            "request":"launch",
+            "cwd":"${workspaceFolder}"
+
+        }
+    ]
+}

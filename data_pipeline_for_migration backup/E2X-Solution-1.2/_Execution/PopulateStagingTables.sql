@@ -1,0 +1,17 @@
+EXEC e2x.PopulateStagingLeInScope
+
+EXEC e2x.PopulateStagingLegalEntityCompanies
+EXEC e2x.PopulateStagingLegalEntityIndividuals
+
+EXEC e2x.PopulateStagingClassifications
+
+EXEC e2x.PopulateStagingAddresses
+EXEC e2x.PopulateStagingContacts
+EXEC e2x.PopulateStagingComments
+EXEC e2x.PopulateStagingTaxIdentifiers
+
+EXEC e2x.PopulateStagingProducts
+
+EXEC e2x.PopulateStagingAssociations
+
+EXEC e2x.PopulateStagingDocuments

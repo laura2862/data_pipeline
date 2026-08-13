@@ -1,0 +1,25 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260806130740
+Username: BNS\s7909996
+RunAs User: BNS\s7909996
+Configuration Name: 
+Machine: EOOPW0ETJT5 (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\s7909996\AppData\Local\Programs\Microsoft VS Code\e4c7e7b1d6\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 49576
+PSVersion: 5.1.22621.7376
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.7376
+BuildVersion: 10.0.22621.7376
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Generated deployment SQL: C:\Users\s7909996\OneDrive - The Bank of Nova Scotia\Documents\Workspace\Doc Analysis\E2X-Solution-1.2\Output\Deploy-ScotiaBank-E2XObjects.sql
+Included SQL files: 55
+Build log: C:\Users\s7909996\OneDrive - The Bank of Nova Scotia\Documents\Workspace\Doc Analysis\E2X-Solution-1.2\Output\Logs\Deploy-ScotiaBank-E2XObjects_Build_20260806_130740.log
+**********************
+Windows PowerShell transcript end
+End time: 20260806130740
+**********************

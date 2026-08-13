@@ -1,0 +1,25 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260804133901
+Username: DESKTOP-UTSOR5P\Kamil
+RunAs User: DESKTOP-UTSOR5P\Kamil
+Configuration Name: 
+Machine: DESKTOP-UTSOR5P (Microsoft Windows NT 10.0.26200.0)
+Host Application: PowerShell.exe -noexit -WorkingDirectory C:\Migration\ScotiaE2X\Scripts
+Process ID: 3284
+PSVersion: 5.1.26100.8972
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8972
+BuildVersion: 10.0.26100.8972
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Generated deployment SQL: C:\Migration\ScotiaE2X\Output\Deploy-ScotiaBank-E2XObjects.sql
+Included SQL files: 55
+Build log: C:\Migration\ScotiaE2X\Output\Logs\Deploy-ScotiaBank-E2XObjects_Build_20260804_133901.log
+**********************
+Windows PowerShell transcript end
+End time: 20260804133901
+**********************

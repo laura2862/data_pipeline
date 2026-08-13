@@ -1,0 +1,30 @@
+CREATE OR ALTER VIEW e2x.vwExtractContacts
+AS
+SELECT DISTINCT
+    stag.LegalEntityId,
+    stag.ContactId AS fenEId,
+    stag.AlternateId,
+    stag.ParentAlternateId,
+    stag.FenEContactSubTypeId,
+    stag.FenEContactSubType AS FenEContactSubType,
+    stag.FenXContactSubType AS contactType,
+    stag.FenEContactStatusId,
+    stag.FenEContactStatus AS FenEContactStatus,
+    stag.FenXContactStatus AS contactStatus,
+    stag.FenETitleId,
+    stag.FenETitle AS FenETitle,
+    stag.FenXTitle AS title,
+    stag.FenEBusinessTitleId,
+    stag.FenEBusinessTitle AS FenEBusinessTitle,
+    stag.FenXBusinessTitle AS businessTitle,
+    stag.FirstName AS firstName,
+    stag.LastName AS lastName,
+    stag.PrimaryPhoneNumber AS primaryPhoneNumber,
+    stag.HomePhone AS homePhone,
+    stag.WorkPhone AS workPhone,
+    stag.Mobile AS mobile,
+    stag.Fax AS fax,
+    stag.Email AS email,
+    stag.IsPrimary AS primaryContact,
+    stag.Comments AS comments
+FROM e2x.StagingContacts AS stag;

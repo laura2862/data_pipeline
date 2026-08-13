@@ -1,0 +1,9 @@
+--INSERT INTO e2x.ExcludedLegalEntities
+--(
+--    LegalEntityId,
+--    ExclusionReason,
+--    LoadTimestamp
+--)
+--VALUES
+--    (12345, 'Excluded from migration', CURRENT_TIMESTAMP),
+--    (67890, 'Excluded from migration', CURRENT_TIMESTAMP);

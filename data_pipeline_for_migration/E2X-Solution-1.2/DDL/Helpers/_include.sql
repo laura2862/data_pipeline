@@ -1,0 +1,16 @@
+Functions\e2x.BitToYesNo.sql
+Views\e2x.vwLatestCompletedCase.sql
+Views\e2x.vwLatestCompletedClassification.sql
+Views\e2x.vwMultiSelectAgg_LegalEntity.sql
+Views\e2x.vwMultiSelectAgg_LegalEntity_Pivoted.sql
+Views\Classifications\e2x.vwCFIU.sql
+Views\Classifications\e2x.vwCRS.sql
+Views\Classifications\e2x.vwDoddFrank.sql
+Views\Classifications\e2x.vwDGSD.sql
+Views\Classifications\e2x.vwUKEMIR.sql
+Views\Classifications\e2x.vwEMIR.sql
+Views\Classifications\e2x.vwFINRA.sql
+Views\Classifications\e2x.vwMAS.sql
+Views\Classifications\e2x.vwUSTax.sql
+Views\Classifications\e2x.vwUSTaxRelatedParty.sql
+Views\Classifications\e2x.vwMiFIDII.sql

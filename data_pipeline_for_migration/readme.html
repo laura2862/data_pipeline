@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>readme.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="fene-to-fenx-migration-data-pipeline-and-vendor-extracts-reconciliation-framework">FenE to FenX Migration Data Pipeline and Vendor Extracts Reconciliation Framework</h1>
+<h2 id="overview">Overview</h2>
+<p>This project supports the migration of client, document, and related entity data from the Fenergo (FenE) platform to FenX.</p>
+<p>The pipeline performs the following functions:</p>
+<ol>
+<li>Extract migration data from the FenE database</li>
+<li>Match FenE and FenX documents</li>
+<li>Match FenE and FenX clients</li>
+<li>Build final FenE-to-FenX migration datasets</li>
+<li>Filter data to migration-approved entities</li>
+<li>Validate each processing stage</li>
+<li>Compare BNS migration outputs against E2X vendor extracts</li>
+</ol>
+<p>The objective is to provide complete traceability from source system extraction through final reconciliation with vendor deliverables.</p>
+<hr>
+<h1 id="high-level-pipeline">High-Level Pipeline</h1>
+<pre class="hljs"><code><div>STEP 01
+Extract Source Data
+    ↓
+
+STEP 02
+Document Matching
+    ↓
+
+STEP 03
+Client Matching
+    ↓
+
+STEP 04
+Build Final FenE Mapped Dataset
+    ↓
+
+STEP 05
+Build Final iManage Mapped Dataset
+    ↓
+
+STEP 06
+Entity In Scope Filter
+    ↓
+
+STEP 07
+Validation Framework
+    ↓
+
+Vendor Reconciliation
+(BNS vs E2X)
+</div></code></pre>
+<hr>
+<h1 id="project-structure">Project Structure</h1>
+<h2 id="source-extract-folder">Source Extract Folder</h2>
+<pre class="hljs"><code><div>temp/
+</div></code></pre>
+<p>Contains intermediate data generated by the migration pipeline.</p>
+<p>Examples:</p>
+<pre class="hljs"><code><div>fen_client_detail.csv
+fen_doc.csv
+fen_doc_detail.csv
+fen_product.csv
+fen_comment.csv
+fen_contact.csv
+fen_association.csv
+fen_address.csv
+fen_taxid.csv
+</div></code></pre>
+<hr>
+<h2 id="final-output-folder">Final Output Folder</h2>
+<pre class="hljs"><code><div>output/
+</div></code></pre>
+<p>Contains final migration outputs.</p>
+<p>Examples:</p>
+<pre class="hljs"><code><div>final_fen_to_im.csv
+final_im_to_fen.csv
+</div></code></pre>
+<hr>
+<h2 id="in-scope-output-folder">In-Scope Output Folder</h2>
+<pre class="hljs"><code><div>output_in_scope/
+</div></code></pre>
+<p>Contains migration outputs restricted to approved migration scope.</p>
+<p>Examples:</p>
+<pre class="hljs"><code><div>in_scope_fen_client_detail.csv
+in_scope_fen_doc.csv
+in_scope_fen_product.csv
+in_scope_fen_comment.csv
+in_scope_fen_contact.csv
+in_scope_fen_association.csv
+in_scope_fen_address.csv
+in_scope_fen_taxid.csv
+</div></code></pre>
+<hr>
+<h2 id="vendor-extract-folder">Vendor Extract Folder</h2>
+<pre class="hljs"><code><div>E2X-Solution-1.1/Output/Check_Extracts/
+</div></code></pre>
+<p>Contains extract files received from E2X.</p>
+<p>Examples:</p>
+<pre class="hljs"><code><div>LeInScope.csv
+Documents.csv
+Products.csv
+Comments.csv
+Contacts.csv
+Associations.csv
+Addresses.csv
+TaxIdentifiers.csv
+</div></code></pre>
+<hr>
+<h2 id="validation-folder">Validation Folder</h2>
+<pre class="hljs"><code><div>validation_output/
+</div></code></pre>
+<p>Contains validation reports, logs, and reconciliation outputs.</p>
+<p>Examples:</p>
+<pre class="hljs"><code><div>validation_log.txt
+
+e2x_checksum.csv
+
+e2x_client.csv
+e2x_document.csv
+e2x_product.csv
+e2x_comment.csv
+e2x_contact.csv
+e2x_association.csv
+e2x_address.csv
+e2x_taxid.csv
+
+e2x_detail_mapping_summary.csv
+</div></code></pre>
+<hr>
+<h1 id="pipeline-orchestration">Pipeline Orchestration</h1>
+<p>The pipeline is orchestrated through:</p>
+<pre class="hljs"><code><div>main.py
+</div></code></pre>
+<p>Each stage is executed through a common framework:</p>
+<pre class="hljs"><code><div>run_step()
+</div></code></pre>
+<p>For each processing stage:</p>
+<ol>
+<li>Execute pipeline logic</li>
+<li>Execute validation logic</li>
+<li>Update validation context</li>
+<li>Log validation results</li>
+<li>Stop pipeline immediately if validation fails</li>
+</ol>
+<p>Benefits:</p>
+<pre class="hljs"><code><div>Consistent execution
+Consistent validation
+Centralized logging
+Centralized error handling
+Controlled pipeline flow
+</div></code></pre>
+<hr>
+<h1 id="step-01---extract">STEP 01 - Extract</h1>
+<h2 id="module">Module</h2>
+<pre class="hljs"><code><div>pipeline/_01_extract.py
+</div></code></pre>
+<h2 id="purpose">Purpose</h2>
+<p>Extract migration data from the FenE SQL database and save dimensional datasets to CSV.</p>
+<p>This is the primary source data acquisition stage.</p>
+<h2 id="inputs">Inputs</h2>
+<pre class="hljs"><code><div>FenE SQL Database
+</div></code></pre>
+<p>Primary entities include</p>
+<pre class="hljs"><code><div>Legal Entity
+Document
+Product
+Comment
+Contact
+Association
+Address
+Tax Identifier
+</div></code></pre>
+<h2 id="outputs">Outputs</h2>
+<p>Location:</p>
+<pre class="hljs"><code><div>temp/
+</div></code></pre>
+<p>Files:</p>
+<pre class="hljs"><code><div>fen_client_detail.csv
+fen_doc.csv
+fen_doc_detail.csv
+fen_product.csv
+fen_comment.csv
+fen_contact.csv
+fen_association.csv
+fen_address.csv
+fen_taxid.csv
+</div></code></pre>
+<h2 id="validation">Validation</h2>
+<p>Validation Function:</p>
+<pre class="hljs"><code><div>validate_step_01_extract()
+</div></code></pre>
+<p>Checks:</p>
+<pre class="hljs"><code><div>File existence
+Row count
+Column count
+Required columns
+Key completeness
+Null key validation
+</div></code></pre>
+<p>Required keys include:</p>
+<pre class="hljs"><code><div>LegalEntityId
+DocumentId
+ProductId
+CommentId
+ContactId
+AssociatedRelationId
+AddressId
+TaxIdentiferId
+</div></code></pre>
+<hr>
+<h1 id="step-02---match-documents">STEP 02 - Match Documents</h1>
+<h2 id="module-1">Module</h2>
+<pre class="hljs"><code><div>pipeline/_02_match_documents.py
+</div></code></pre>
+<h2 id="purpose-1">Purpose</h2>
+<p>Perform document-level matching between FenE and iManage by 4 ordered layers:</p>
+<pre class="hljs"><code><div>    Layer 1:
+        iManage_Doc_Num = docnum
+
+    Layer 2:
+        LegalEntityId = c1alias
+        AND DocumentName = docname
+
+    Layer 3:
+        ReferenceId = c1alias
+        AND DocumentName = docname
+
+    Layer 4:
+        LegalEntityName = C_DESCRIPT
+        AND DocumentName = docname
+
+    Earlier layers win.
+
+
+</div></code></pre>
+<p>Creates candidate document mappings for migration.</p>
+<h2 id="inputs-1">Inputs</h2>
+<pre class="hljs"><code><div>temp/fen_client_doc.csv
+temp/im_client_doc.csv
+</div></code></pre>
+<h2 id="output">Output</h2>
+<pre class="hljs"><code><div>output/doc_fen_to_im.csv
+output/doc_im_to_doc.csv
+</div></code></pre>
+<h2 id="processing-summary">Processing Summary</h2>
+<p>Document records are matched using document-related attributes and identifiers.</p>
+<h2 id="validation-1">Validation</h2>
+<p>Validation Function:</p>
+<pre class="hljs"><code><div>validate_step_02_document_match()
+</div></code></pre>
+<p>Checks:</p>
+<pre class="hljs"><code><div>Document match count
+Duplicate match detection
+Missing document keys
+Match coverage analysis
+</div></code></pre>
+<hr>
+<h1 id="step-03---match-clients">STEP 03 - Match Clients</h1>
+<h2 id="module-2">Module</h2>
+<pre class="hljs"><code><div>pipeline/_03_match_clients.py
+</div></code></pre>
+<h2 id="purpose-2">Purpose</h2>
+<p>Perform client-level matching using fuzzy matching techniques.
+Only client-level migration keys are retained.</p>
+<pre class="hljs"><code><div>  Fen client match to IM client.
+
+    Layers:
+        1. LegalEntityId = c1alias
+        2. ReferenceId = c1alias
+        3. LegalEntityName fuzzy C_DESCRIPT
+        4. Alias1 fuzzy C_DESCRIPT
+        5. Alias2 fuzzy C_DESCRIPT
+        6. Alias3 fuzzy C_DESCRIPT
+        7. Alias4 fuzzy C_DESCRIPT
+</div></code></pre>
+<h2 id="inputs-2">Inputs</h2>
+<pre class="hljs"><code><div>temp/fen_client_doc.csv
+temp/im_client_doc.csv
+</div></code></pre>
+<h2 id="output-1">Output</h2>
+<pre class="hljs"><code><div>output/client_fen_to_im.csv
+output/client_im_to_doc.csv
+</div></code></pre>
+<h2 id="processing-summary-1">Processing Summary</h2>
+<p>Clients are matched using client-related attributes and identifiers.
+RefClientID LegalEntityId or iManage ClientId as matched reference client Id</p>
+<h2 id="validation-2">Validation</h2>
+<p>Validation Function:</p>
+<pre class="hljs"><code><div>validate_step_03_client_match()
+</div></code></pre>
+<p>Checks:</p>
+<pre class="hljs"><code><div>Match count
+Distinct client count
+Duplicate client matches
+Missing keys
+</div></code></pre>
+<hr>
+<h1 id="step-04---final-fene-mapped-dataset">STEP 04 - Final FenE Mapped Dataset</h1>
+<h2 id="module-3">Module</h2>
+<pre class="hljs"><code><div>pipeline/_04_final_fen.py
+</div></code></pre>
+<h2 id="purpose-3">Purpose</h2>
+<p>Build the final FenE mapped dataset.</p>
+<h2 id="inputs-3">Inputs</h2>
+<pre class="hljs"><code><div>output/doc_fen_to_im.csv
+output/client_fen_to_im.csv
+output/fen_association.csv
+output/fen_product.csv
+output/fen_case.csv
+
+</div></code></pre>
+<h2 id="processing-summary-2">Processing Summary</h2>
+<p>Multiple datasets are merged onto:</p>
+<pre class="hljs"><code><div>LegalEntityId
+</div></code></pre>
+<p>One-to-many relationships are aggregated before merging to avoid row explosion.</p>
+<p>Examples:</p>
+<pre class="hljs"><code><div>Product Counts
+Association Counts
+Case Counts
+</div></code></pre>
+<h2 id="output-2">Output</h2>
+<pre class="hljs"><code><div>output/final_fen_to_im.csv
+</div></code></pre>
+<h2 id="validation-3">Validation</h2>
+<p>Validation Function:</p>
+<pre class="hljs"><code><div>validate_step_04_final_fen()
+</div></code></pre>
+<p>Checks:</p>
+<pre class="hljs"><code><div>Row count consistency
+Distinct LegalEntityId count
+Document count preservation
+Product count preservation
+Association count preservation
+Case count preservation
+</div></code></pre>
+<p>Additional checks:</p>
+<pre class="hljs"><code><div>Sample entity validation
+Merge integrity validation
+Unexpected row growth
+Missing record detection
+</div></code></pre>
+<hr>
+<h1 id="step-05---final-imanage-mapped-dataset">STEP 05 - Final iManage Mapped Dataset</h1>
+<h2 id="module-4">Module</h2>
+<pre class="hljs"><code><div>pipeline/_05_final_im.py
+</div></code></pre>
+<h2 id="purpose-4">Purpose</h2>
+<p>Build reverse mapping for iManage mapped dataset:</p>
+<h2 id="inputs-4">Inputs</h2>
+<pre class="hljs"><code><div>output/doc_im_to_fen.csv
+output/client_im_to_fen.csv
+
+</div></code></pre>
+<h2 id="processing-summary-3">Processing Summary</h2>
+<p>Multiple datasets are merged onto:</p>
+<pre class="hljs"><code><div>c1alias - iManage client ID
+</div></code></pre>
+<h2 id="output-3">Output</h2>
+<pre class="hljs"><code><div>output/final_im_to_fen.csv
+</div></code></pre>
+<h2 id="validation-4">Validation</h2>
+<p>Validation Function:</p>
+<pre class="hljs"><code><div>validate_step_05_final_im()
+</div></code></pre>
+<p>Checks:</p>
+<pre class="hljs"><code><div>Distinct entity counts
+Distinct document counts
+</div></code></pre>
+<hr>
+<h1 id="step-06---entity-in-scope-filter">STEP 06 - Entity In Scope Filter</h1>
+<h2 id="module-5">Module</h2>
+<pre class="hljs"><code><div>pipeline/_06_entity_in_scope_filter.py
+</div></code></pre>
+<h2 id="purpose-5">Purpose</h2>
+<p>Restrict migration outputs to approved migration entities.</p>
+<h2 id="inputs-5">Inputs</h2>
+<pre class="hljs"><code><div>output/final_fen_to_im.csv
+temp/fen_entity_in_scope.csv
+</div></code></pre>
+<h2 id="processing-logic">Processing Logic</h2>
+<p>Keep only records where:</p>
+<pre class="hljs"><code><div>LegalEntityId
+exists in
+temp/fen_entity_in_scope.csv
+</div></code></pre>
+<h2 id="outputs-1">Outputs</h2>
+<pre class="hljs"><code><div>output_in_scope/
+output_out_scope/
+</div></code></pre>
+<p>Examples:</p>
+<pre class="hljs"><code><div>in_scope_fen_client_detail.csv
+in_scope_fen_doc.csv
+in_scope_fen_product.csv
+in_scope_fen_comment.csv
+in_scope_fen_contact.csv
+in_scope_fen_association.csv
+in_scope_fen_address.csv
+in_scope_fen_taxid.csv
+
+out_scope_fen_client_detail.csv
+out_scope_fen_doc.csv
+out_scope_fen_product.csv
+out_scope_fen_comment.csv
+out_scope_fen_contact.csv
+out_scope_fen_association.csv
+out_scope_fen_address.csv
+out_scope_fen_taxid.csv
+</div></code></pre>
+<h2 id="validation-5">Validation</h2>
+<p>Validation Function:</p>
+<pre class="hljs"><code><div>validate_step_06_entity_scope_filter()
+</div></code></pre>
+<p>Checks:</p>
+<pre class="hljs"><code><div>In-scope counts reconcile with source
+</div></code></pre>
+<hr>
+<h1 id="step-07---validation-framework">STEP 07 - Validation Framework</h1>
+<h2 id="module-6">Module</h2>
+<pre class="hljs"><code><div>pipeline/_07_validation.py
+</div></code></pre>
+<h2 id="purpose-6">Purpose</h2>
+<p>Provide centralized validation and reporting for all pipeline stages.</p>
+<h2 id="responsibilities">Responsibilities</h2>
+<h3 id="validation-logging">Validation Logging</h3>
+<p>Output:</p>
+<pre class="hljs"><code><div>validation_output/validation_log.txt
+</div></code></pre>
+<h3 id="validation-reports">Validation Reports</h3>
+<p>Generate:</p>
+<pre class="hljs"><code><div>Row count validations
+Sample record validations
+</div></code></pre>
+<h3 id="pipeline-context-tracking">Pipeline Context Tracking</h3>
+<p>The validation framework maintains shared state between stages:
+This enables:</p>
+<pre class="hljs"><code><div>Count verification
+Sample verification
+Pipeline consistency checks
+</div></code></pre>
+<hr>
+<h1 id="vendor-reconciliation">Vendor Reconciliation</h1>
+<h2 id="module-7">Module</h2>
+<pre class="hljs"><code><div>analysis/e2x_compare_extracts.py
+</div></code></pre>
+<h2 id="purpose-7">Purpose</h2>
+<p>Compare BNS migration outputs against E2X vendor outputs.</p>
+<p>This validation occurs after:</p>
+<pre class="hljs"><code><div>Entity In Scope Filter
+</div></code></pre>
+<p>to ensure only approved migration entities are reconciled.</p>
+<hr>
+<h1 id="reconciliation-inputs">Reconciliation Inputs</h1>
+<h2 id="bns-output">BNS Output</h2>
+<p>Location:</p>
+<pre class="hljs"><code><div>output_in_scope/
+</div></code></pre>
+<p>Files:</p>
+<pre class="hljs"><code><div>in_scope_fen_client_detail.csv
+in_scope_fen_doc.csv
+in_scope_fen_product.csv
+in_scope_fen_comment.csv
+in_scope_fen_contact.csv
+in_scope_fen_association.csv
+in_scope_fen_address.csv
+in_scope_fen_taxid.csv
+</div></code></pre>
+<h2 id="vendor-output">Vendor Output</h2>
+<p>Location:</p>
+<pre class="hljs"><code><div>E2X-Solution-1.1/Output/Check_Extracts/
+</div></code></pre>
+<p>Files:</p>
+<pre class="hljs"><code><div>LeInScope.csv
+Documents.csv
+Products.csv
+Comments.csv
+Contacts.csv
+Associations.csv
+Addresses.csv
+TaxIdentifiers.csv
+</div></code></pre>
+<hr>
+<h2 id="client">Client</h2>
+<pre class="hljs"><code><div>LegalEntityId
+</div></code></pre>
+<h2 id="document">Document</h2>
+<pre class="hljs"><code><div>LegalEntityId + DocumentId
+</div></code></pre>
+<h2 id="product">Product</h2>
+<pre class="hljs"><code><div>LegalEntityId + ProductId
+</div></code></pre>
+<h2 id="comment">Comment</h2>
+<pre class="hljs"><code><div>LegalEntityId + CommentId
+</div></code></pre>
+<h2 id="contact">Contact</h2>
+<pre class="hljs"><code><div>LegalEntityId + ContactId
+</div></code></pre>
+<h2 id="association">Association</h2>
+<pre class="hljs"><code><div>LegalEntityId + AssociatedRelationId
+</div></code></pre>
+<h2 id="address">Address</h2>
+<pre class="hljs"><code><div>LegalEntityId + AddressId
+</div></code></pre>
+<h2 id="tax-identifier">Tax Identifier</h2>
+<pre class="hljs"><code><div>LegalEntityId + TaxIdentiferId
+</div></code></pre>
+<hr>
+<h1 id="vendor-checksum-validation">Vendor Checksum Validation</h1>
+<h2 id="purpose-8">Purpose</h2>
+<p>Compare distinct business key counts between BNS and E2X.</p>
+<h2 id="output-4">Output</h2>
+<pre class="hljs"><code><div>validation_output/e2x_checksum.csv
+</div></code></pre>
+<p>Columns:</p>
+<pre class="hljs"><code><div>ExtractName
+BNSKeyCount
+E2XKeyCount
+Difference
+Status
+</div></code></pre>
+<hr>
+<h1 id="vendor-detail-validation">Vendor Detail Validation</h1>
+<h2 id="purpose-9">Purpose</h2>
+<p>Compare every business key individually.</p>
+<h2 id="outputs-2">Outputs</h2>
+<pre class="hljs"><code><div>e2x_client.csv
+e2x_document.csv
+e2x_product.csv
+e2x_comment.csv
+e2x_contact.csv
+e2x_association.csv
+e2x_address.csv
+e2x_taxid.csv
+</div></code></pre>
+<h2 id="mapping-status">Mapping Status</h2>
+<h3 id="mapped">Mapped</h3>
+<p>Exists in:</p>
+<pre class="hljs"><code><div>BNS and E2X
+</div></code></pre>
+<h3 id="only_in_bns_result">Only_In_BNS_Result</h3>
+<p>Exists in:</p>
+<pre class="hljs"><code><div>BNS only
+</div></code></pre>
+<h3 id="only_in_e2x_result">Only_In_E2X_Result</h3>
+<p>Exists in:</p>
+<pre class="hljs"><code><div>E2X only
+</div></code></pre>
+<hr>
+<h1 id="final-deliverables">Final Deliverables</h1>
+<p>After successful execution, the following outputs should exist.</p>
+<h2 id="final-mapped-datasets">Final Mapped Datasets</h2>
+<pre class="hljs"><code><div>output/
+
+final_fen_to_im.csv
+final_im_to_fen.csv
+</div></code></pre>
+<h2 id="in-scope-outputs">In-Scope Outputs</h2>
+<pre class="hljs"><code><div>output_in_scope/
+
+in_scope_fen_client_detail.csv
+in_scope_fen_doc.csv
+in_scope_fen_product.csv
+in_scope_fen_comment.csv
+in_scope_fen_contact.csv
+in_scope_fen_association.csv
+in_scope_fen_address.csv
+in_scope_fen_taxid.csv
+</div></code></pre>
+<h2 id="validation-outputs">Validation Outputs</h2>
+<pre class="hljs"><code><div>validation_output/
+
+e2x_checksum.csv
+
+e2x_client.csv
+e2x_document.csv
+e2x_product.csv
+e2x_comment.csv
+e2x_contact.csv
+e2x_association.csv
+e2x_address.csv
+e2x_taxid.csv
+
+e2x_detail_mapping_summary.csv
+</div></code></pre>
+<hr>
+<h1 id="execution-instructions">Execution Instructions</h1>
+<h2 id="run-full-migration-pipeline">Run Full Migration Pipeline</h2>
+<p>From project root:</p>
+<pre class="hljs"><code><div>py <span class="hljs-literal">-m</span> main
+</div></code></pre>
+<hr>
+<h2 id="run-vendor-reconciliation-only">Run Vendor Reconciliation Only</h2>
+<pre class="hljs"><code><div>py <span class="hljs-literal">-m</span> analysis.e2x_compare_extracts
+</div></code></pre>
+<hr>
+<h1 id="success-criteria">Success Criteria</h1>
+<p>The migration pipeline is considered successful when:</p>
+<pre class="hljs"><code><div>All pipeline steps complete successfully
+All validation checks pass
+Key counts reconcile between stages
+Vendor checksum differences are explained
+Vendor detail mapping results are reconciled
+Final migration outputs are traceable back to source data
+</div></code></pre>
+<p>This framework provides complete traceability from FenE source data through migration outputs and final vendor reconciliation.</p>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+CREATE TABLE e2x.StagingProducts
+(
+    Id INT IDENTITY(1,1) NOT NULL CONSTRAINT PK_E2X_StagingProducts PRIMARY KEY,
+    [AlternateId] VARCHAR(50) NOT NULL,
+    [ProductId] INT NOT NULL,
+    [LegalEntityId] INT NOT NULL,
+    [CaseId] INT NOT NULL,
+    [FenEProductCategoryId] INT NULL,
+    [FenEProductCategory] VARCHAR(250) NULL,
+    [FenXProductCategory] VARCHAR(250) NULL,
+    [FenELookupProductTypeId] INT NULL,
+    [FenELookupProductType] VARCHAR(250) NULL,
+    [FenXLookupProductType] VARCHAR(250) NULL,
+    [FenEProductStatusId] INT NULL,
+    [FenEProductStatus] VARCHAR(250) NULL,
+    [FenXProductStatus] VARCHAR(250) NULL,
+    [ParentAlternateId] VARCHAR(50) NULL,
+    [FenEBookingEntityId] INT NULL,
+    [FenEBookingEntity] NVARCHAR(500) NULL,
+    [FenXBookingEntity] NVARCHAR(500) NULL,
+    [FenEArrangingEntityId] INT NULL,
+    [FenEArrangingEntity] NVARCHAR(500) NULL,
+    [FenXArrangingEntity] NVARCHAR(500) NULL,
+    [FenEInternalDeskId] INT NULL,
+    [FenEInternalDesk] NVARCHAR(500) NULL,
+    [FenXInternalDesk] NVARCHAR(500) NULL,
+    [IntendedUseOfAccount] NVARCHAR(50) NULL,
+    [CreatedDate] DATE NULL,
+    [ActivatedDate] DATE NULL,
+    [LastUpdated] DATE NULL,
+    [KycApprovalDate] DATE NULL,
+    [NamesOfSalesPersons] NVARCHAR(500) NULL,
+    [FenEReasonForProductClosureId] INT NULL,
+    [FenEReasonForProductClosure] NVARCHAR(500) NULL,
+    [FenXReasonForProductClosure] NVARCHAR(500) NULL,
+    [FenEExpectedActivityTypeId] INT NULL,
+    [FenEExpectedActivityType] NVARCHAR(500) NULL,
+    [FenXExpectedActivityType] NVARCHAR(500) NULL,
+    [FenEFrequencyOfTradingVolumeId] INT NULL,
+    [FenEFrequencyOfTradingVolume] NVARCHAR(500) NULL,
+    [FenXFrequencyOfTradingVolume] NVARCHAR(500) NULL,
+    [FenESourceOfFundsId] INT NULL,
+    [FenESourceOfFunds] NVARCHAR(500) NULL,
+    [FenXSourceOfFunds] NVARCHAR(500) NULL,
+    [SourceOfFundsDetails] NVARCHAR(4000) NULL,
+    [LoadTimestamp] DATETIME NOT NULL
+);
+
+CREATE NONCLUSTERED INDEX IX_E2X_StagingProducts_LegalEntityId ON e2x.StagingProducts (LegalEntityId);
+CREATE UNIQUE NONCLUSTERED INDEX IX_E2X_StagingProducts_ProductId ON e2x.StagingProducts (ProductId);
+CREATE NONCLUSTERED INDEX IX_E2X_StagingProducts_CaseId ON e2x.StagingProducts (CaseId);
+CREATE UNIQUE NONCLUSTERED INDEX IX_E2X_StagingProducts_AlternateId ON e2x.StagingProducts (AlternateId);

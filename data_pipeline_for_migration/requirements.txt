@@ -1,0 +1,11 @@
+# Python runtime dependencies for the FenE-to-FenX migration pipeline.
+# Python 3.11-3.13 is supported. Use the setup script to create an isolated
+# virtual environment and install these packages.
+pandas>=2.2,<3.0
+numpy>=1.26,<3.0
+SQLAlchemy>=2.0,<3.0
+pyodbc>=5.1,<6.0
+openpyxl>=3.1,<4.0
+rapidfuzz>=3.9,<4.0
+scikit-learn>=1.5,<2.0
+sparse-dot-topn>=1.1,<2.0

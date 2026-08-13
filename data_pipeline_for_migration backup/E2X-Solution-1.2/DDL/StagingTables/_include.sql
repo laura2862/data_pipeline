@@ -1,0 +1,11 @@
+e2x.StagingLeInScope.sql
+e2x.StagingLegalEntityCompanies.sql
+e2x.StagingLegalEntityIndividuals.sql
+e2x.StagingClassifications.sql
+e2x.StagingAddresses.sql
+e2x.StagingContacts.sql
+e2x.StagingComments.sql
+e2x.StagingTaxIdentifiers.sql
+e2x.StagingAssociations.sql
+e2x.StagingProducts.sql
+e2x.StagingDocuments.sql

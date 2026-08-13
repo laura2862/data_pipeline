@@ -1,0 +1,11 @@
+e2x.vwLegalEntitiesInScope.sql
+e2x.vwExtractLegalEntityCompanies.sql
+e2x.vwExtractLegalEntityIndividuals.sql
+e2x.vwExtractClassifications.sql
+e2x.vwExtractAddresses.sql
+e2x.vwExtractContacts.sql
+e2x.vwExtractComments.sql
+e2x.vwExtractTaxIdentifiers.sql
+e2x.vwExtractAssociations.sql
+e2x.vwExtractProducts.sql
+e2x.vwExtractDocuments.sql
